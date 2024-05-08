@@ -29,8 +29,8 @@ class TracksList extends StatelessWidget {
             context.watch<CurrentTrackModel>().selected?.id == e.id;
         final textStyle = TextStyle(
           color: selected
-              ? Theme.of(context).accentColor
-              : Theme.of(context).iconTheme.color,
+              ? Theme.of(context).colorScheme.secondary
+              : Theme.of(context).colorScheme.onSurface,
         );
         return DataRow(
           cells: [

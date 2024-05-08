@@ -29,12 +29,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Spotify UI',
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData(
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
         appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
         scaffoldBackgroundColor: const Color(0xFF121212),
         backgroundColor: const Color(0xFF121212),
         primaryColor: Colors.black,
-        accentColor: const Color(0xFF1DB954),
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: const Color(0xFF1DB954), // Your accent color
+        ),
         iconTheme: const IconThemeData().copyWith(color: Colors.white),
         fontFamily: 'Montserrat',
         textTheme: TextTheme(

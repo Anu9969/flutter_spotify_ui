@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_spotify_ui/data/data.dart';
 import 'package:flutter_spotify_ui/widgets/widgets.dart';
 
@@ -16,20 +15,6 @@ class PlaylistScreen extends StatefulWidget {
 }
 
 class _PlaylistScreenState extends State<PlaylistScreen> {
-  ScrollController? _scrollController;
-
-  @override
-  void initState() {
-    super.initState();
-    _scrollController = ScrollController();
-  }
-
-  @override
-  void dispose() {
-    _scrollController?.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +59,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
         actions: [
           TextButton.icon(
             style: TextButton.styleFrom(
-              primary: Theme.of(context).iconTheme.color,
+              foregroundColor: Theme.of(context).iconTheme.color,
             ),
             onPressed: () {},
             icon: const Icon(
@@ -105,15 +90,12 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
             stops: const [0, 0.3],
           ),
         ),
-        child: Scrollbar(
-          isAlwaysShown: true,
-          controller: _scrollController,
-          child: ListView(
-            controller: _scrollController,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20.0,
-              vertical: 60.0,
-            ),
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20.0,
+            vertical: 60.0,
+          ),
+          child: Column(
             children: [
               PlaylistHeader(playlist: widget.playlist),
               TracksList(tracks: widget.playlist.songs),

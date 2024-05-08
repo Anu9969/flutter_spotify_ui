@@ -80,7 +80,7 @@ class _PlaylistButtons extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
             ),
-            backgroundColor: Theme.of(context).accentColor,
+            backgroundColor: Theme.of(context).colorScheme.primary,
             primary: Theme.of(context).iconTheme.color,
             textStyle: Theme.of(context)
                 .textTheme
